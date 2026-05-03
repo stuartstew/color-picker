@@ -1,10 +1,19 @@
 import "@mantine/core/styles.css";
-import { Button, MantineProvider } from "@mantine/core";
+import { AppShell, MantineProvider } from "@mantine/core";
+import { Header } from "@/features/header";
+import { Main } from "@/features/main";
 
 export const App = () => {
   return (
     <MantineProvider>
-      <Button>Hello world</Button>
+      <AppShell header={{ height: 60 }}>
+        <AppShell.Header>
+          <Header />
+        </AppShell.Header>
+        <AppShell.Main>
+          <Main />
+        </AppShell.Main>
+      </AppShell>
     </MantineProvider>
   );
 };
