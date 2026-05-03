@@ -13,6 +13,7 @@
     "format-fix": "biome format --write",
     "lint-fix": "biome lint --write",
     "check-fix": "biome check --write",
+    "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
   "dependencies": {
