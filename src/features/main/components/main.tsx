@@ -1,4 +1,4 @@
-import { Container, Group } from "@mantine/core";
+import { ColorSwatch, Container, Group } from "@mantine/core";
 import { useRgb } from "../hooks/use-rgb";
 import { AdjustedColorPicker } from "./adjusted-color-picker";
 
@@ -9,6 +9,7 @@ export const Main = () => {
     <Container size={768} py={128}>
       <Group justify="center" gap="xl">
         <AdjustedColorPicker value={`#${hex}`} onChange={(value) => setHex(value.replace("#", ""))} />
+        <ColorSwatch color={`#${hex}`} radius="md" w={224} h={36} />
       </Group>
     </Container>
   );
