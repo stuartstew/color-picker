@@ -10,7 +10,7 @@ export const Main = () => {
 
   return (
     <Container size={768} py={128}>
-      <Group justify="center" gap="xl">
+      <Group justify="center" gap="xl" h={224}>
         <AdjustedColorPicker value={`#${hex}`} onChange={(value) => setHex(value.replace("#", ""))} />
         <Stack h="100%" justify="space-between" w={256}>
           <ColorSwatch color={`#${hex}`} radius="md" w={224} h={36} />
