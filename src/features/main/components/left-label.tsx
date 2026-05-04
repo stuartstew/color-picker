@@ -8,7 +8,7 @@ type Props = {
 
 export const LeftLabel = ({ label, w, children }: Props) => {
   return (
-    <Group>
+    <Group component="label">
       <Box w={w}>{label}</Box>
       {children}
     </Group>
