@@ -55,3 +55,6 @@ jobs:
 
       - name: Type check (TypeScript)
         run: bun run typecheck
+
+      - name: Test (Vitest)
+        run: bun run test
