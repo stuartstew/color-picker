@@ -1,5 +1,5 @@
 import { NumberInput } from "@mantine/core";
-import { useState } from "react";
+import { useDraftInput } from "../hooks/use-draft-input";
 
 type Props = {
   value: number;
@@ -10,34 +10,20 @@ type Props = {
 };
 
 export const NonNegativeIntegerInput = ({ value, onChange, size, w, max }: Props) => {
-  const [inputValue, setInputValue] = useState<number | string>("");
-  const [focused, setFocused] = useState(false);
-  const [oldValue, setOldValue] = useState(0);
-
-  const handleFocus = () => {
-    setInputValue(value);
-    setOldValue(value);
-    setFocused(true);
-  };
-
-  const handleBlur = () => {
-    const clampedValue = typeof inputValue === "number" ? Math.min(inputValue, max) : 0;
+  const { currentValue, setDraft, focus, blur, updateDraftIfValueChanged } = useDraftInput<string | number>((draft) => {
+    const clampedValue = typeof draft === "number" ? Math.min(draft, max) : 0;
     onChange(clampedValue);
-    setFocused(false);
-  };
+  });
 
-  // Update the value when the color picker is used while this component has focus
-  if (focused && value !== oldValue) {
-    setInputValue(value);
-    setOldValue(value);
-  }
+  // Updates the draft when the value of the color picker changes
+  updateDraftIfValueChanged(value);
 
   return (
     <NumberInput
-      value={focused ? inputValue : value}
-      onChange={setInputValue}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      value={currentValue(value)}
+      onChange={setDraft}
+      onFocus={() => focus(value)}
+      onBlur={blur}
       size={size}
       w={w}
       max={max}
