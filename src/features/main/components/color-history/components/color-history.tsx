@@ -1,5 +1,6 @@
-import { Divider, Paper, ScrollArea } from "@mantine/core";
-import { ColorHistoryItem } from "./color-history-item";
+import { Paper } from "@mantine/core";
+import { ColorHistoryScrollArea } from "./color-history-scroll-area";
+import { EmptyState } from "./empty-state";
 
 type Props = {
   colorHistory: string[];
@@ -8,14 +9,7 @@ type Props = {
 export const ColorHistory = ({ colorHistory }: Props) => {
   return (
     <Paper withBorder h="100%" w="100%" px="sm" py="sm">
-      <ScrollArea h="100%" offsetScrollbars>
-        {colorHistory.map((hex, i) => (
-          <>
-            {i > 0 && <Divider my="sm" />}
-            <ColorHistoryItem hex={hex} />
-          </>
-        ))}
-      </ScrollArea>
+      {colorHistory.length === 0 ? <EmptyState /> : <ColorHistoryScrollArea colorHistory={colorHistory} />}
     </Paper>
   );
 };
