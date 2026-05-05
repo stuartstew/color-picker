@@ -8,6 +8,8 @@ export const useDraftInput = <T>(onBlur: (draft: T) => void) => {
   // biome-ignore lint/style/noNonNullAssertion: draft cannot be undefined if focused is true
   const currentValue = (value: T) => (focused ? draft! : value);
 
+  const setDefinedDraft = (value: T) => setDraft(value);
+
   const focus = (value: T) => {
     setDraft(value);
     setOldValue(value);
@@ -27,5 +29,5 @@ export const useDraftInput = <T>(onBlur: (draft: T) => void) => {
     }
   };
 
-  return { currentValue, setDraft, focus, blur, updateDraftIfValueChanged };
+  return { currentValue, setDraft: setDefinedDraft, focus, blur, updateDraftIfValueChanged };
 };
