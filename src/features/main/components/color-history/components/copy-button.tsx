@@ -6,7 +6,7 @@ type Props = {
   hex: string;
 };
 
-export const ColorHistoryCopyButton = ({ hex }: Props) => {
+export const CopyButton = ({ hex }: Props) => {
   const clipboard = useClipboard({ timeout: 500 });
   const icon = clipboard.copied ? (
     <IconCheck style={{ height: "70%", width: "70%" }} stroke={1.5} />

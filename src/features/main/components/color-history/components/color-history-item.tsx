@@ -1,5 +1,5 @@
 import { ColorSwatch, Group, Text } from "@mantine/core";
-import { ColorHistoryCopyButton } from "./color-history-copy-button";
+import { CopyButton } from "./copy-button";
 
 type Props = {
   hex: string;
@@ -13,7 +13,7 @@ export const ColorHistoryItem = ({ hex }: Props) => {
         <ColorSwatch color={hexWithHash} size={20} />
         <Text>{hexWithHash}</Text>
       </Group>
-      <ColorHistoryCopyButton hex={hex} />
+      <CopyButton hex={hex} />
     </Group>
   );
 };
