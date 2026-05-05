@@ -4,11 +4,12 @@ import { AdjustedColorPicker } from "./adjusted-color-picker";
 import { ColorHistory } from "./color-history";
 import { CopyButton } from "./copy-button";
 import { HexInput } from "./hex-input";
+import { HsvInput } from "./hsv-input";
 import { LeftLabel } from "./left-label";
 import { RgbInput } from "./rgb-input";
 
 export const Main = () => {
-  const { rgb, hex, colorHistory, copied, setRgb, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
+  const { rgb, hsv, hex, colorHistory, copied, changeRgb, changeHsv, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
 
   return (
     <Container size={768} py={128}>
@@ -16,7 +17,10 @@ export const Main = () => {
         <AdjustedColorPicker value={`#${hex}`} onChange={(value) => setHex(value.replace("#", ""))} />
         <Stack h="100%" justify="space-between" ml="lg">
           <ColorSwatch color={`#${hex}`} radius="md" w={224} h={36} />
-          <RgbInput value={rgb} onChange={setRgb} />
+          <Group gap="lg">
+            <RgbInput value={rgb} onChange={changeRgb} />
+            <HsvInput value={hsv} onChange={changeHsv} />
+          </Group>
           <Group gap="xs">
             <LeftLabel label="#" w="sm">
               <HexInput size="xs" w={64} value={hex} onChange={setHex} />
