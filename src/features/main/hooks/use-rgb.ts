@@ -16,5 +16,5 @@ export const useRgb = (initialState: Rgb) => {
     setColorHistory([hex, ...intermediate].slice(0, 10));
   };
 
-  return { rgb, hex, colorHistory, setRgb, setHex, copyHex };
+  return { rgb, hex, colorHistory, copied: clipboard.copied, setRgb, setHex, copyHex };
 };

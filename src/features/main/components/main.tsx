@@ -8,7 +8,7 @@ import { LeftLabel } from "./left-label";
 import { RgbInput } from "./rgb-input";
 
 export const Main = () => {
-  const { rgb, hex, colorHistory, setRgb, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
+  const { rgb, hex, colorHistory, copied, setRgb, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
 
   return (
     <Container size={768} py={128}>
@@ -21,7 +21,7 @@ export const Main = () => {
             <LeftLabel label="#" w="sm">
               <HexInput size="xs" w={64} value={hex} onChange={setHex} />
             </LeftLabel>
-            <CopyButton onClick={copyHex} />
+            <CopyButton onClick={copyHex} copied={copied} />
           </Group>
         </Stack>
         <Box ml="lg" h="100%" style={{ flex: 1 }}>
