@@ -15,14 +15,14 @@ export const RgbInput = ({ value, onChange }: Props) => {
 
   return (
     <Stack gap="xs">
-      <LeftLabel label="R:" w="sm">
-        <NonNegativeIntegerInput size="xs" w={64} max={255} value={value.r} onChange={handleChangeR} />
+      <LeftLabel label="R:" w="xs">
+        <NonNegativeIntegerInput size="xs" w={48} max={255} value={value.r} onChange={handleChangeR} />
       </LeftLabel>
-      <LeftLabel label="G:" w="sm">
-        <NonNegativeIntegerInput size="xs" w={64} max={255} value={value.g} onChange={handleChangeG} />
+      <LeftLabel label="G:" w="xs">
+        <NonNegativeIntegerInput size="xs" w={48} max={255} value={value.g} onChange={handleChangeG} />
       </LeftLabel>
-      <LeftLabel label="B:" w="sm">
-        <NonNegativeIntegerInput size="xs" w={64} max={255} value={value.b} onChange={handleChangeB} />
+      <LeftLabel label="B:" w="xs">
+        <NonNegativeIntegerInput size="xs" w={48} max={255} value={value.b} onChange={handleChangeB} />
       </LeftLabel>
     </Stack>
   );

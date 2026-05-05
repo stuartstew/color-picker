@@ -9,7 +9,7 @@ describe("use-rgb", () => {
     expect(result.current.rgb).toEqual({ r: 0, g: 0, b: 0 });
     expect(result.current.hex).toBe("000000");
 
-    act(() => result.current.setRgb({ r: 255, g: 0, b: 0 }));
+    act(() => result.current.changeRgb({ r: 255, g: 0, b: 0 }));
 
     expect(result.current.rgb).toEqual({ r: 255, g: 0, b: 0 });
     expect(result.current.hex).toBe("ff0000");
