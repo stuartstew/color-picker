@@ -1,5 +1,6 @@
 import { TextInput } from "@mantine/core";
 import { useDraftInput } from "../hooks/use-draft-input";
+import { isValidHex } from "../utils/validation";
 
 type Props = {
   value: string;
@@ -11,7 +12,7 @@ type Props = {
 export const HexInput = ({ value, onChange, size, w }: Props) => {
   const { currentValue, setDraft, focus, blur, updateDraftIfValueChanged } = useDraftInput<string>((draft) => {
     const lower = draft.trim().toLowerCase();
-    if (/^[0-9a-f]{6}$/.test(lower)) {
+    if (isValidHex(lower)) {
       onChange(lower);
     }
   });

@@ -1,7 +1,10 @@
 import type { Hsv } from "../types/hsv";
 import type { Rgb } from "../types/rgb";
+import { isValidHsv, isValidRgb } from "./validation";
 
 export const rgbToHsv = (rgb: Rgb): Hsv => {
+  if (!isValidRgb(rgb)) throw new Error(`Invalid RGB value: ${rgb}`);
+
   const max = Math.max(rgb.r, rgb.g, rgb.b);
   const min = Math.min(rgb.r, rgb.g, rgb.b);
 
@@ -32,6 +35,8 @@ const rawHue = (rgb: Rgb): number => {
 };
 
 export const hsvToRgb = (hsv: Hsv): Rgb => {
+  if (!isValidHsv(hsv)) throw new Error(`Invalid HSV value: ${hsv}`);
+
   const normalizedRgb = hsvToNormalizedRgb(hsv);
   const r = Math.round(normalizedRgb.r * 255);
   const g = Math.round(normalizedRgb.g * 255);
