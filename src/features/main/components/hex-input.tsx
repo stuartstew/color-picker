@@ -1,5 +1,5 @@
 import { TextInput } from "@mantine/core";
-import { useState } from "react";
+import { useDraftInput } from "../hooks/use-draft-input";
 
 type Props = {
   value: string;
@@ -9,36 +9,22 @@ type Props = {
 };
 
 export const HexInput = ({ value, onChange, size, w }: Props) => {
-  const [inputValue, setInputValue] = useState("");
-  const [focused, setFocused] = useState(false);
-  const [oldValue, setOldValue] = useState("");
-
-  const handleFocus = () => {
-    setInputValue(value);
-    setOldValue(value);
-    setFocused(true);
-  };
-
-  const handleBlur = () => {
-    const lower = inputValue.trim().toLowerCase();
+  const { currentValue, setDraft, focus, blur, updateDraftIfValueChanged } = useDraftInput<string>((draft) => {
+    const lower = draft.trim().toLowerCase();
     if (/^[0-9a-f]{6}$/.test(lower)) {
       onChange(lower);
     }
-    setFocused(false);
-  };
+  });
 
-  // Update the value when the color picker is used while this component has focus
-  if (focused && value !== oldValue) {
-    setInputValue(value);
-    setOldValue(value);
-  }
+  // Updates the draft when the value of the color picker changes
+  updateDraftIfValueChanged(value);
 
   return (
     <TextInput
-      value={focused ? inputValue : value}
-      onChange={(event) => setInputValue(event.currentTarget.value)}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      value={currentValue(value)}
+      onChange={(event) => setDraft(event.currentTarget.value)}
+      onFocus={() => focus(value)}
+      onBlur={blur}
       size={size}
       w={w}
     />
