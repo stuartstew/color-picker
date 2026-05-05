@@ -1,75 +1,47 @@
-# React + TypeScript + Vite
+# Color Picker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Website](https://stuartstew.github.io/color-picker/)
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Prerequisites
 
-## React Compiler
+- Bun 1.3+
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Setup
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+bun install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Commands
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command              | Description                        |
+| -------------------- | ---------------------------------- |
+| `bun run dev`        | Start development server           |
+| `bun run build`      | Build for production               |
+| `bun run preview`    | Preview production build           |
+| `bun run check`      | Run Biome formatter and linter     |
+| `bun run test`       | Run tests with Vitest              |
+| `bun run typecheck`  | Run TypeScript type checking       |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Tech Stack
+
+- **Framework:** React + Vite
+- **UI Library:** Mantine
+- **Language:** TypeScript
+- **Formatter/Linter:** Biome
+- **Testing:** Vitest + Testing Library
+
+## Contributing
+
+1. Fork the repository and create a feature branch from `main`.
+2. Make your changes, then run the checks below before opening a PR.
+
+```bash
+bun run check
+bun run typecheck
+bun run test
 ```
+
+3. Open a pull request to `main`. CI will automatically run format/lint checks, type checking, and tests.
