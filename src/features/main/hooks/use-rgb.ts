@@ -1,9 +1,9 @@
 import { useClipboard } from "@mantine/hooks";
 import { useState } from "react";
-import type { Hsv } from "../types/hsv";
-import type { Rgb } from "../types/rgb";
-import { hexToRgb, rgbToHex } from "../utils/rgb-hex";
-import { hsvToRgb, rgbToHsv } from "../utils/rgb-hsv";
+import type { Hsv } from "@/shared/types/hsv";
+import type { Rgb } from "@/shared/types/rgb";
+import { hexToRgb, rgbToHex } from "@/shared/utils/rgb-hex";
+import { hsvToRgb, rgbToHsv } from "@/shared/utils/rgb-hsv";
 
 const MAX_HISTORY_SIZE = 50;
 

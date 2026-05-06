@@ -1,5 +1,5 @@
 import { Stack } from "@mantine/core";
-import type { Rgb } from "../types/rgb";
+import type { Rgb } from "@/shared/types/rgb";
 import { LeftLabel } from "./left-label";
 import { NonNegativeIntegerInput } from "./non-negative-integer-input";
 

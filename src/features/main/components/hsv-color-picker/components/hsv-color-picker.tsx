@@ -1,6 +1,6 @@
 import { ColorPicker } from "@mantine/core";
-import type { Hsv } from "../../../types/hsv";
-import { formatHsl, hslToHsv, hsvToHsl, parseHsl } from "../../../utils/hsl";
+import type { Hsv } from "@/shared/types/hsv";
+import { formatHsl, hslToHsv, hsvToHsl, parseHsl } from "@/shared/utils/hsl";
 import classes from "./hsv-color-picker.module.css";
 
 type Props = {
