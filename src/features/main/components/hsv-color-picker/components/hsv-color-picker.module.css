@@ -1,0 +1,10 @@
+.wrapper {
+  height: 224px;
+  width: 192px;
+  display: flex;
+  flex-direction: column;
+}
+
+.saturation {
+  flex: 1;
+}
