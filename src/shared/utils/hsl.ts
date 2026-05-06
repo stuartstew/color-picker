@@ -1,5 +1,5 @@
-import type { Hsl } from "../types/hsl";
-import type { Hsv } from "../types/hsv";
+import type { Hsl } from "@/shared/types/hsl";
+import type { Hsv } from "@/shared/types/hsv";
 import { isValidHsl, isValidHsv } from "./validation";
 
 export const formatHsl = (hsl: Hsl) => `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;

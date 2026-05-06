@@ -1,6 +1,6 @@
 import { TextInput } from "@mantine/core";
+import { isValidHex } from "@/shared/utils/validation";
 import { useDraftInput } from "../hooks/use-draft-input";
-import { isValidHex } from "../utils/validation";
 
 type Props = {
   value: string;

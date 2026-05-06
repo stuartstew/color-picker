@@ -1,4 +1,4 @@
-import type { Rgb } from "../types/rgb";
+import type { Rgb } from "@/shared/types/rgb";
 import { isValidHex, isValidRgb } from "./validation";
 
 const paddedHex = (x: number) => x.toString(16).padStart(2, "0");

@@ -1,6 +1,6 @@
-import type { Hsl } from "../types/hsl";
-import type { Hsv } from "../types/hsv";
-import type { Rgb } from "../types/rgb";
+import type { Hsl } from "@/shared/types/hsl";
+import type { Hsv } from "@/shared/types/hsv";
+import type { Rgb } from "@/shared/types/rgb";
 
 const isNonNegativeIntegerInRange = (value: number, max: number) =>
   Number.isInteger(value) && 0 <= value && value <= max;

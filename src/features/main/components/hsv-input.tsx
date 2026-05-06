@@ -1,5 +1,5 @@
 import { Stack } from "@mantine/core";
-import type { Hsv } from "../types/hsv";
+import type { Hsv } from "@/shared/types/hsv";
 import { LeftLabel } from "./left-label";
 import { NonNegativeIntegerInput } from "./non-negative-integer-input";
 

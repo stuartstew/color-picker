@@ -1,5 +1,5 @@
-import type { Hsv } from "../types/hsv";
-import type { Rgb } from "../types/rgb";
+import type { Hsv } from "@/shared/types/hsv";
+import type { Rgb } from "@/shared/types/rgb";
 import { isValidHsv, isValidRgb } from "./validation";
 
 export const rgbToHsv = (rgb: Rgb): Hsv => {
