@@ -18,11 +18,16 @@ export const NonNegativeIntegerInput = ({ value, onChange, size, w, max }: Props
   // Updates the draft when the value of the color picker changes
   updateDraftIfValueChanged(value);
 
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+    focus(value);
+    event.target.select();
+  };
+
   return (
     <NumberInput
       value={currentValue(value)}
       onChange={setDraft}
-      onFocus={() => focus(value)}
+      onFocus={handleFocus}
       onBlur={blur}
       size={size}
       w={w}

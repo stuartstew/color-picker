@@ -20,11 +20,16 @@ export const HexInput = ({ value, onChange, size, w }: Props) => {
   // Updates the draft when the value of the color picker changes
   updateDraftIfValueChanged(value);
 
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+    focus(value);
+    event.target.select();
+  };
+
   return (
     <TextInput
       value={currentValue(value)}
       onChange={(event) => setDraft(event.currentTarget.value)}
-      onFocus={() => focus(value)}
+      onFocus={handleFocus}
       onBlur={blur}
       size={size}
       w={w}
