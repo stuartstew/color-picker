@@ -6,24 +6,25 @@
 
 ### Prerequisites
 
-- Bun 1.3+
+- Node 24+
+- pnpm 11+
 
 ### Setup
 
 ```bash
-bun install
+pnpm install
 ```
 
 ### Commands
 
-| Command              | Description                        |
-| -------------------- | ---------------------------------- |
-| `bun run dev`        | Start development server           |
-| `bun run build`      | Build for production               |
-| `bun run preview`    | Preview production build           |
-| `bun run check`      | Run Biome formatter and linter     |
-| `bun run test`       | Run tests with Vitest              |
-| `bun run typecheck`  | Run TypeScript type checking       |
+| Command           | Description                        |
+| ----------------- | ---------------------------------- |
+| `pnpm dev`        | Start development server           |
+| `pnpm build`      | Build for production               |
+| `pnpm preview`    | Preview production build           |
+| `pnpm check`      | Run Biome formatter and linter     |
+| `pnpm test`       | Run tests with Vitest              |
+| `pnpm typecheck`  | Run TypeScript type checking       |
 
 ### Tech Stack
 
@@ -39,9 +40,9 @@ bun install
 2. Make your changes, then run the checks below before opening a PR.
 
 ```bash
-bun run check
-bun run typecheck
-bun run test
+pnpm check
+pnpm typecheck
+pnpm test
 ```
 
 3. Open a pull request to `main`. CI will automatically run format/lint checks, type checking, and tests.
