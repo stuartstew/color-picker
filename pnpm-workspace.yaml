@@ -1,0 +1,5 @@
+# Only install package versions published at least a day ago
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - esbuild
