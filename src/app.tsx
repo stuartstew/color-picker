@@ -1,7 +1,7 @@
 import "@mantine/core/styles.css";
 import { AppShell, MantineProvider } from "@mantine/core";
-import { Header } from "@/features/header";
-import { Main } from "@/features/main";
+import { Header } from "@/components/header";
+import { ColorPicker } from "@/components/color-picker";
 
 export const App = () => {
   return (
@@ -11,7 +11,7 @@ export const App = () => {
           <Header />
         </AppShell.Header>
         <AppShell.Main>
-          <Main />
+          <ColorPicker />
         </AppShell.Main>
       </AppShell>
     </MantineProvider>

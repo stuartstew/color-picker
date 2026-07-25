@@ -1,6 +1,6 @@
 import { Paper } from "@mantine/core";
-import { ColorHistoryScrollArea } from "./color-history-scroll-area";
-import { EmptyState } from "./empty-state";
+import { ColorHistoryScrollArea } from "./components/color-history-scroll-area";
+import { EmptyState } from "./components/empty-state";
 
 type Props = {
   colorHistory: string[];
