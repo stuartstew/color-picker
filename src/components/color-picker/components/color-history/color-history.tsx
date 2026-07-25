@@ -8,7 +8,7 @@ type Props = {
 
 export const ColorHistory = ({ colorHistory }: Props) => {
   return (
-    <Paper withBorder h="100%" w="100%" px="sm" py="sm">
+    <Paper h="100%" w="100%" px="sm" py="sm">
       {colorHistory.length === 0 ? <EmptyState /> : <ColorHistoryScrollArea colorHistory={colorHistory} />}
     </Paper>
   );
