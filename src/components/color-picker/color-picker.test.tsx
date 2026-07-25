@@ -1,6 +1,5 @@
-import { cleanup, fireEvent, screen } from "@testing-library/react";
-import { beforeEach, describe, expect, it } from "vitest";
-import { render } from "@/test-utils";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { cleanup, fireEvent, render, screen, userEvent } from "@/test-utils";
 import { ColorPicker } from "./color-picker";
 
 beforeEach(() => {
@@ -40,5 +39,20 @@ describe("color-picker", async () => {
 
     const b = screen.getByLabelText("B:") as HTMLInputElement;
     expect(b.value).toBe("188");
+  });
+
+  it("should copy hex", async () => {
+    const writeTextSpy = vi.spyOn(navigator.clipboard, "writeText").mockResolvedValue();
+
+    render(<ColorPicker />);
+
+    const hex = screen.getByLabelText("#");
+    fireEvent.change(hex, { target: { value: "012abc" } });
+    fireEvent.blur(hex);
+
+    const copyButton = screen.getByRole("button", { name: /copy/i });
+    await userEvent.click(copyButton);
+
+    expect(writeTextSpy).toHaveBeenCalledWith("012abc");
   });
 });
