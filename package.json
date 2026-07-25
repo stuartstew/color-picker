@@ -16,6 +16,7 @@
     "format:fix": "biome format --write",
     "lint:fix": "biome lint --write",
     "check:fix": "biome check --write",
+    "ci": "biome ci",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
