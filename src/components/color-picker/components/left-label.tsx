@@ -1,4 +1,4 @@
-import { Box, Group } from "@mantine/core";
+import { Group, Text } from "@mantine/core";
 
 type Props = {
   label: React.ReactNode;
@@ -9,7 +9,9 @@ type Props = {
 export const LeftLabel = ({ label, w, children }: Props) => {
   return (
     <Group component="label">
-      <Box w={w}>{label}</Box>
+      <Text w={w} fw={500}>
+        {label}
+      </Text>
       {children}
     </Group>
   );
