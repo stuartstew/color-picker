@@ -5,16 +5,17 @@ import { EmptyState } from "./components/empty-state";
 
 type Props = {
   colorHistory: ColorHistoryItem[];
+  onChangeHex: (hex: string) => void;
 };
 
-export const ColorHistory = ({ colorHistory }: Props) => {
+export const ColorHistory = ({ colorHistory, onChangeHex }: Props) => {
   if (colorHistory.length === 0) {
     return <EmptyState />;
   } else {
     return (
       <Stack gap="xs">
         {colorHistory.map((item) => (
-          <ColorHistoryItemCard key={item.id} hex={item.hex} />
+          <ColorHistoryItemCard key={item.id} hex={item.hex} onEdit={() => onChangeHex(item.hex)} />
         ))}
       </Stack>
     );

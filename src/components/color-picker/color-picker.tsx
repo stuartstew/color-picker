@@ -30,7 +30,7 @@ export const ColorPicker = () => {
         </Stack>
       </Group>
       <Divider my="xl" />
-      <ColorHistory colorHistory={colorHistory} />
+      <ColorHistory colorHistory={colorHistory} onChangeHex={setHex} />
     </Container>
   );
 };
