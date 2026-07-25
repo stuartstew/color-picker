@@ -1,14 +1,14 @@
 import { Box, ColorSwatch, Container, Group, Stack } from "@mantine/core";
-import { useRgb } from "../hooks/use-rgb";
-import { ColorHistory } from "./color-history";
-import { CopyButton } from "./copy-button";
-import { HexInput } from "./hex-input";
-import { HsvColorPicker } from "./hsv-color-picker";
-import { HsvInput } from "./hsv-input";
-import { LeftLabel } from "./left-label";
-import { RgbInput } from "./rgb-input";
+import { ColorHistory } from "./components/color-history";
+import { CopyButton } from "./components/copy-button";
+import { HexInput } from "./components/hex-input";
+import { HsvColorPicker } from "./components/hsv-color-picker";
+import { HsvInput } from "./components/hsv-input";
+import { LeftLabel } from "./components/left-label";
+import { RgbInput } from "./components/rgb-input";
+import { useRgb } from "./hooks/use-rgb";
 
-export const Main = () => {
+export const ColorPicker = () => {
   const { rgb, hsv, hex, colorHistory, copied, changeRgb, changeHsv, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
 
   return (
