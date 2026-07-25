@@ -1,5 +1,5 @@
 import { ActionIcon, useComputedColorScheme, useMantineColorScheme } from "@mantine/core";
-import { IconMoon, IconSun } from "@tabler/icons-react";
+import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 
 export const ColorSchemeToggle = () => {
   const { setColorScheme } = useMantineColorScheme();
@@ -14,9 +14,9 @@ export const ColorSchemeToggle = () => {
       aria-label="Toggle color scheme"
     >
       {computedColorScheme === "light" ? (
-        <IconMoon style={{ height: "80%", width: "80%" }} stroke={1.5} />
+        <MoonIcon style={{ height: "70%", width: "70%" }} />
       ) : (
-        <IconSun style={{ height: "80%", width: "80%" }} stroke={1.5} />
+        <SunIcon style={{ height: "70%", width: "70%" }} />
       )}
     </ActionIcon>
   );
