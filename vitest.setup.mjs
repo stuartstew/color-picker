@@ -24,6 +24,14 @@ Object.defineProperty(document, "fonts", {
   value: { addEventListener: vi.fn(), removeEventListener: vi.fn() },
 });
 
+Object.defineProperty(navigator, "clipboard", {
+  value: {
+    writeText: vi.fn(),
+    readText: vi.fn(),
+  },
+  configurable: true,
+});
+
 class ResizeObserver {
   observe() {}
   unobserve() {}
