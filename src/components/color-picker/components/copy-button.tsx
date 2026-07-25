@@ -1,5 +1,5 @@
 import { Button } from "@mantine/core";
-import { IconCheck, IconCopy } from "@tabler/icons-react";
+import { CheckIcon, CopyIcon } from "@phosphor-icons/react";
 
 type Props = {
   onClick: () => void;
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const CopyButton = ({ onClick, copied }: Props) => {
-  const icon = copied ? <IconCheck size={14} /> : <IconCopy size={14} />;
+  const icon = copied ? <CheckIcon size={14} /> : <CopyIcon size={14} />;
   return (
     <Button leftSection={icon} onClick={onClick} size="xs">
       {copied ? "Copied" : "Copy"}

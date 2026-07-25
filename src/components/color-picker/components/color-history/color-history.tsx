@@ -1,5 +1,5 @@
-import { Paper } from "@mantine/core";
-import { ColorHistoryScrollArea } from "./components/color-history-scroll-area";
+import { Stack } from "@mantine/core";
+import { ColorHistoryItem } from "./components/color-history-item";
 import { EmptyState } from "./components/empty-state";
 
 type Props = {
@@ -7,9 +7,15 @@ type Props = {
 };
 
 export const ColorHistory = ({ colorHistory }: Props) => {
-  return (
-    <Paper withBorder h="100%" w="100%" px="sm" py="sm">
-      {colorHistory.length === 0 ? <EmptyState /> : <ColorHistoryScrollArea colorHistory={colorHistory} />}
-    </Paper>
-  );
+  if (colorHistory.length === 0) {
+    return <EmptyState />;
+  } else {
+    return (
+      <Stack gap="xs">
+        {colorHistory.map((hex) => (
+          <ColorHistoryItem key={hex} hex={hex} />
+        ))}
+      </Stack>
+    );
+  }
 };

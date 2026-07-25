@@ -1,4 +1,4 @@
-import { ColorSwatch, Group, Text } from "@mantine/core";
+import { ColorSwatch, Group, Paper, Text } from "@mantine/core";
 import { CopyButton } from "./copy-button";
 
 type Props = {
@@ -8,12 +8,14 @@ type Props = {
 export const ColorHistoryItem = ({ hex }: Props) => {
   const hexWithHash = `#${hex}`;
   return (
-    <Group justify="space-between">
-      <Group>
-        <ColorSwatch color={hexWithHash} size={20} />
-        <Text>{hexWithHash}</Text>
+    <Paper radius="lg" shadow="xs" withBorder p="md">
+      <Group justify="space-between">
+        <Group>
+          <ColorSwatch color={hexWithHash} size={20} />
+          <Text fw={500}>{hexWithHash}</Text>
+        </Group>
+        <CopyButton hex={hex} />
       </Group>
-      <CopyButton hex={hex} />
-    </Group>
+    </Paper>
   );
 };

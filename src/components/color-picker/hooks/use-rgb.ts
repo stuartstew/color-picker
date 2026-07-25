@@ -5,7 +5,7 @@ import type { Rgb } from "@/shared/types/rgb";
 import { hexToRgb, rgbToHex } from "@/shared/utils/rgb-hex";
 import { hsvToRgb, rgbToHsv } from "@/shared/utils/rgb-hsv";
 
-const MAX_HISTORY_SIZE = 50;
+const MAX_HISTORY_SIZE = 100;
 
 export const useRgb = (initialState: Rgb) => {
   const [rgb, setRgb] = useState(initialState);
