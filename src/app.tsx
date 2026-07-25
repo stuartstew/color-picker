@@ -22,6 +22,7 @@ const theme = createTheme({
   primaryShade: 5,
   white: slate[0],
   black: slate[9],
+  defaultRadius: "xl",
 });
 
 export const App = () => {
