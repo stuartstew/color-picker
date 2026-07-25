@@ -1,15 +1,15 @@
 import { cleanup, fireEvent, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it } from "vitest";
 import { render } from "@/test-utils";
-import { Main } from "./main";
+import { ColorPicker } from "./color-picker";
 
 beforeEach(() => {
   cleanup();
 });
 
-describe("main", async () => {
+describe("color-picker", async () => {
   it("should update hex", async () => {
-    render(<Main />);
+    render(<ColorPicker />);
 
     const r = screen.getByLabelText("R:");
     fireEvent.change(r, { target: { value: 20 } });
@@ -26,7 +26,7 @@ describe("main", async () => {
   });
 
   it("should update rgb", async () => {
-    render(<Main />);
+    render(<ColorPicker />);
 
     const hex = screen.getByLabelText("#");
     fireEvent.change(hex, { target: { value: "012abc" } });
