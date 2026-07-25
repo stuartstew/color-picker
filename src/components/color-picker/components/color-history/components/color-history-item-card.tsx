@@ -5,7 +5,7 @@ type Props = {
   hex: string;
 };
 
-export const ColorHistoryItem = ({ hex }: Props) => {
+export const ColorHistoryItemCard = ({ hex }: Props) => {
   const hexWithHash = `#${hex}`;
   return (
     <Paper radius="lg" shadow="xs" withBorder p="md">

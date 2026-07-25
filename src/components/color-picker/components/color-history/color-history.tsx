@@ -1,9 +1,10 @@
 import { Stack } from "@mantine/core";
-import { ColorHistoryItem } from "./components/color-history-item";
+import type { ColorHistoryItem } from "@/shared/types/color-history-item";
+import { ColorHistoryItemCard } from "./components/color-history-item-card";
 import { EmptyState } from "./components/empty-state";
 
 type Props = {
-  colorHistory: string[];
+  colorHistory: ColorHistoryItem[];
 };
 
 export const ColorHistory = ({ colorHistory }: Props) => {
@@ -12,8 +13,8 @@ export const ColorHistory = ({ colorHistory }: Props) => {
   } else {
     return (
       <Stack gap="xs">
-        {colorHistory.map((hex) => (
-          <ColorHistoryItem key={hex} hex={hex} />
+        {colorHistory.map((item) => (
+          <ColorHistoryItemCard key={item.id} hex={item.hex} />
         ))}
       </Stack>
     );
