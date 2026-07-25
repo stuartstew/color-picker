@@ -15,7 +15,7 @@ export const CopyButton = ({ hex }: Props) => {
   );
 
   return (
-    <ActionIcon variant="default" radius="md" onClick={() => clipboard.copy(hex)}>
+    <ActionIcon variant="default" radius="md" onClick={() => clipboard.copy(hex)} aria-label="Copy">
       {icon}
     </ActionIcon>
   );
