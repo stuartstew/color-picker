@@ -9,7 +9,7 @@ import { RgbInput } from "./components/rgb-input";
 import { useRgb } from "./hooks/use-rgb";
 
 export const ColorPicker = () => {
-  const { rgb, hsv, hex, colorHistory, copied, changeRgb, changeHsv, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
+  const { rgb, hsv, hex, colorHistory, changeRgb, changeHsv, setHex, addToHistory } = useRgb({ r: 255, g: 0, b: 0 });
 
   return (
     <Container size={640} mt={64} mb={32}>
@@ -25,7 +25,7 @@ export const ColorPicker = () => {
             <LeftLabel label="#" w="xs">
               <HexInput size="xs" w={64} value={hex} onChange={setHex} />
             </LeftLabel>
-            <CopyButton onClick={copyHex} copied={copied} />
+            <CopyButton hex={hex} onCopy={addToHistory} />
           </Group>
         </Stack>
       </Group>
