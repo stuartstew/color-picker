@@ -41,7 +41,11 @@ export const useRgb = (initialState: Rgb) => {
     setHsv(rgbToHsv(rgb));
   };
 
-  return { rgb, hsv, hex, colorHistory, changeRgb, changeHsv, setHex, addToHistory };
+  const deleteItemFromHistory = (id: number) => {
+    setColorHistory(colorHistory.filter((item) => item.id !== id));
+  };
+
+  return { rgb, hsv, hex, colorHistory, changeRgb, changeHsv, setHex, addToHistory, deleteItemFromHistory };
 };
 
 const rgbEqual = (x: Rgb, y: Rgb) => x.r === y.r && x.g === y.g && x.b === y.b;

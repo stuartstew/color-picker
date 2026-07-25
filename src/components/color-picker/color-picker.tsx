@@ -9,7 +9,11 @@ import { RgbInput } from "./components/rgb-input";
 import { useRgb } from "./hooks/use-rgb";
 
 export const ColorPicker = () => {
-  const { rgb, hsv, hex, colorHistory, changeRgb, changeHsv, setHex, addToHistory } = useRgb({ r: 255, g: 0, b: 0 });
+  const { rgb, hsv, hex, colorHistory, changeRgb, changeHsv, setHex, addToHistory, deleteItemFromHistory } = useRgb({
+    r: 255,
+    g: 0,
+    b: 0,
+  });
 
   return (
     <Container size={640} mt={64} mb={32}>
@@ -30,7 +34,7 @@ export const ColorPicker = () => {
         </Stack>
       </Group>
       <Divider my="xl" />
-      <ColorHistory colorHistory={colorHistory} onChangeHex={setHex} />
+      <ColorHistory colorHistory={colorHistory} onChangeHex={setHex} onDeleteItem={deleteItemFromHistory} />
     </Container>
   );
 };
