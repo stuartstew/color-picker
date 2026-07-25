@@ -12,7 +12,7 @@ export const ColorPicker = () => {
   const { rgb, hsv, hex, colorHistory, copied, changeRgb, changeHsv, setHex, copyHex } = useRgb({ r: 255, g: 0, b: 0 });
 
   return (
-    <Container size={768} mt={64}>
+    <Container size={640} mt={64}>
       <Group justify="center" h={224}>
         <HsvColorPicker value={hsv} onChange={changeHsv} />
         <Stack h="100%" justify="space-between" ml="xl">
