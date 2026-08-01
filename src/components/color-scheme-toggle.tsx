@@ -1,4 +1,4 @@
-import { ActionIcon, useComputedColorScheme, useMantineColorScheme } from "@mantine/core";
+import { ActionIcon, Tooltip, useComputedColorScheme, useMantineColorScheme } from "@mantine/core";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 
 export const ColorSchemeToggle = () => {
@@ -6,18 +6,20 @@ export const ColorSchemeToggle = () => {
   const computedColorScheme = useComputedColorScheme("light", { getInitialValueInEffect: true });
 
   return (
-    <ActionIcon
-      onClick={() => setColorScheme(computedColorScheme === "light" ? "dark" : "light")}
-      variant="transparent"
-      size="lg"
-      radius={0}
-      aria-label="Toggle color scheme"
-    >
-      {computedColorScheme === "light" ? (
-        <MoonIcon style={{ height: "70%", width: "70%" }} />
-      ) : (
-        <SunIcon style={{ height: "70%", width: "70%" }} />
-      )}
-    </ActionIcon>
+    <Tooltip radius="md" label={computedColorScheme === "light" ? "Dark mode" : "Light mode"}>
+      <ActionIcon
+        onClick={() => setColorScheme(computedColorScheme === "light" ? "dark" : "light")}
+        variant="transparent"
+        size="lg"
+        radius={0}
+        aria-label="Toggle color scheme"
+      >
+        {computedColorScheme === "light" ? (
+          <MoonIcon style={{ height: "70%", width: "70%" }} />
+        ) : (
+          <SunIcon style={{ height: "70%", width: "70%" }} />
+        )}
+      </ActionIcon>
+    </Tooltip>
   );
 };
