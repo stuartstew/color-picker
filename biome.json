@@ -6,7 +6,8 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false
+    "ignoreUnknown": false,
+    "includes": ["**", "!src/components/color-picker/components/hsv-color-picker.module.css"]
   },
   "formatter": {
     "enabled": true,
