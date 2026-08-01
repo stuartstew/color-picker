@@ -1,4 +1,4 @@
-import { ColorSwatch, Container, Divider, Group, Stack } from "@mantine/core";
+import { ColorSwatch, Container, Divider, Group, Stack, useMantineTheme } from "@mantine/core";
 import { ColorHistory } from "./components/color-history";
 import { CopyButton } from "./components/copy-button";
 import { HexInput } from "./components/hex-input";
@@ -9,6 +9,8 @@ import { RgbInput } from "./components/rgb-input";
 import { useRgb } from "./hooks/use-rgb";
 
 export const ColorPicker = () => {
+  const theme = useMantineTheme();
+
   const { rgb, hsv, hex, colorHistory, changeRgb, changeHsv, setHex, addToHistory, deleteItemFromHistory } = useRgb({
     r: 255,
     g: 0,
@@ -16,7 +18,7 @@ export const ColorPicker = () => {
   });
 
   return (
-    <Container size={640} mt={64} mb={32}>
+    <Container size={theme.breakpoints.xs} mt={64} mb={32}>
       <Group justify="center" h={224}>
         <HsvColorPicker value={hsv} onChange={changeHsv} />
         <Stack h="100%" justify="space-between" ml="xl">
